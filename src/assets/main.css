@@ -1,6 +1,10 @@
 @import './base.css';
 @import 'tailwindcss';
 
+@theme {
+  --font-sans: Poppins, sans-serif;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
