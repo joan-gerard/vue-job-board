@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import Navbar from "@/components/Navbar.vue"
 </script>
 
 <template>
-    <h1 class="text-3xl">Job Board</h1>
+    <Navbar />
 </template>
 
 <style scoped></style>
