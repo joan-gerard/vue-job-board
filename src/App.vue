@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <h1 class="text-3xl bg-red-400 text-white">Job Board</h1>
+    <h1 class="text-3xl">Job Board</h1>
 </template>
 
 <style scoped></style>
