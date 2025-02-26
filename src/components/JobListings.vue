@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import jobData from "@/jobs.json"
 import { ref, defineProps } from "vue"
-import type { Job } from '@/types/globalTypes'
+import type { Job } from '@/types/global'
 import JobListing from "@/components/JobListing.vue"
 
 const jobs = ref<Job[]>(jobData)

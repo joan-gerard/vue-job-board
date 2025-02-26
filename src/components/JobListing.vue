@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { defineProps, computed, ref } from "vue"
+import type { Job } from '@/types/global'
 
-const props = defineProps({
-    job: Object
-})
+const props = defineProps<{
+    job: Job
+}>()
 const showFullDesc = ref(false)
 
 const toggleFullDesc = () => {
