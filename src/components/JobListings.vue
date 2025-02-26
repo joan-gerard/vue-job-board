@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import jobData from "@/jobs.json"
-import { ref } from "vue"
+import { ref, defineProps } from "vue"
 import type { Job } from '@/types/globalTypes'
 import JobListing from "@/components/JobListing.vue"
 
 const jobs = ref<Job[]>(jobData)
+
+defineProps({
+    limit: Number,
+    showButton: {
+        type: Boolean,
+        default: false
+    }
+})
 
 </script>
 
@@ -15,8 +23,12 @@ const jobs = ref<Job[]>(jobData)
                 Browse Jobs
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <JobListing v-for="job in jobs" v-bind:key="job.id" v-bind:job="job" />
+                <JobListing v-for="job in jobs.slice(0, limit || jobs.length)" v-bind:key="job.id" v-bind:job="job" />
             </div>
         </div>
+    </section>
+    <section class="m-auto max-w-lg my-10 px-6" v-if="showButton">
+        <a href="/jobs" class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700">View
+            All Jobs</a>
     </section>
 </template>
