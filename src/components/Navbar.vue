@@ -1,6 +1,11 @@
 <script lang="ts" setup>
-import logo from "@/assets/img/logo.png"
-import { RouterLink } from "vue-router"
+import logo from "@/assets/img/logo.png";
+import { RouterLink, useRoute } from "vue-router"
+
+const isActiveLink = (routePath: string) => {
+    const route = useRoute()
+    return route.path === routePath
+}
 </script>
 
 <template>
@@ -18,10 +23,12 @@ import { RouterLink } from "vue-router"
                             <!-- <a href="index.html"
                                 class="text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">Home</a> -->
                             <RouterLink to="/jobs"
-                                class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2">Jobs
+                                :class="['text-white', 'rounded-md', 'px-3', 'py-2', isActiveLink('/jobs') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white']">
+                                Jobs
                             </RouterLink>
                             <RouterLink to="/jobs/add"
-                                class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2">Add Job
+                                :class="['text-white', 'rounded-md', 'px-3', 'py-2', isActiveLink('/jobs/add') ? 'bg-green-900' : 'hover:bg-gray-900 hover:text-white']">
+                                Add Job
                             </RouterLink>
                         </div>
                     </div>
