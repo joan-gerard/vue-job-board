@@ -12,7 +12,10 @@ defineProps({
         default: false
     }
 })
-const state = reactive({
+const state = reactive<{
+    jobs: Job[];
+    isLoading: boolean;
+}>({
     jobs: [],
     isLoading: true
 })
