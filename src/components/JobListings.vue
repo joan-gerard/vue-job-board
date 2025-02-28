@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import jobData from "@/jobs.json"
-import { ref, defineProps } from "vue"
+import { reactive, defineProps, onMounted } from "vue"
 import type { Job } from '@/types/global'
 import JobListing from "@/components/JobListing.vue"
 import { RouterLink } from "vue-router"
-
-const jobs = ref<Job[]>(jobData)
+import axios from "axios"
 
 defineProps({
     limit: Number,
@@ -15,6 +13,21 @@ defineProps({
     }
 })
 
+const state = reactive({
+    jobs: [],
+    isLoading: true
+})
+
+onMounted(async () => {
+    try {
+        const response = await axios.get("http://localhost:8000/jobs");
+        state.jobs = response.data
+    } catch (error) {
+        console.error("Error fetching data", error)
+    } finally {
+        state.isLoading = false
+    }
+})
 </script>
 
 <template>
@@ -24,7 +37,8 @@ defineProps({
                 Browse Jobs
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <JobListing v-for="job in jobs.slice(0, limit || jobs.length)" v-bind:key="job.id" v-bind:job="job" />
+                <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" v-bind:key="(job as Job).id"
+                    v-bind:job="job" />
             </div>
         </div>
     </section>
