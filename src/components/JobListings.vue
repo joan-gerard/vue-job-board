@@ -39,8 +39,8 @@ onMounted(async () => {
                 Browse Jobs
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" v-bind:key="(job as Job).id"
-                    v-bind:job="job" />
+                <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" v-bind:key="job.id"
+                    v-bind:job="job as Job" />
             </div>
         </div>
     </section>
