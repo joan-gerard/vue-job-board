@@ -3,45 +3,44 @@ import { reactive, onMounted } from "vue"
 import axios from "axios"
 import { useRoute, RouterLink } from "vue-router"
 import type { Job } from "@/types/global"
+import BackButton from "@/components/BackButton.vue"
 
-const route = useRoute()
+const route = useRoute();
+const jobId = route.params.id
 
 const state = reactive<{
-    job: Job | {};
-    isLoading: boolean;
+  job: Job | {};
+  isLoading: boolean;
 }>({
-    job: {},
-    isLoading: true
+  job: {},
+  isLoading: true
 })
 
-console.log("path",route.path)
 
 onMounted(async () => {
-    try {
-        const response = await axios.get(`http://localhost:8000${route.path}`);
-        console.log("response",response.data)
-
-        state.job = response.data
-    } catch (error) {
-        console.error("Error fetching data", error)
-    } finally {
-        state.isLoading = false
-    }
+  try {
+    const response = await axios.get(`http://localhost:8000/jobs/${jobId}`);
+    state.job = response.data
+  } catch (error) {
+    console.error("Error fetching data", error)
+  } finally {
+    state.isLoading = false
+  }
 })
-console.log("THE JOB", state)
 </script>
 
 <template>
+  <BackButton />
   <section v-if="!state.isLoading" class="bg-green-50">
     <div class="container m-auto py-10 px-6">
       <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
         <main>
           <div class="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
-            <div class="text-gray-500 mb-4">{{(state.job as Job).type}}</div>
-            <h1 class="text-3xl font-bold mb-4">{{(state.job as Job).title}}</h1>
+            <div class="text-gray-500 mb-4">{{ (state.job as Job).type }}</div>
+            <h1 class="text-3xl font-bold mb-4">{{ (state.job as Job).title }}</h1>
             <div class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
               <i class="fa-solid fa-location-dot text-lg text-orange-700 mr-2"></i>
-              <p class="text-orange-700">{{(state.job as Job).location}}</p>
+              <p class="text-orange-700">{{ (state.job as Job).location }}</p>
             </div>
           </div>
 
@@ -50,12 +49,12 @@ console.log("THE JOB", state)
               Job Description
             </h3>
             <p class="mb-4">
-              {{(state.job as Job).description}}
+              {{ (state.job as Job).description }}
             </p>
 
             <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
 
-            <p class="mb-4">{{(state.job as Job).salary}}</p>
+            <p class="mb-4">{{ (state.job as Job).salary }}</p>
           </div>
         </main>
 
@@ -65,30 +64,31 @@ console.log("THE JOB", state)
           <div class="bg-white p-6 rounded-lg shadow-md">
             <h3 class="text-xl font-bold mb-6">Company Info</h3>
 
-            <h2 class="text-2xl">{{(state.job as Job).company.name}}</h2>
+            <h2 class="text-2xl">{{ (state.job as Job).company.name }}</h2>
 
             <p class="my-2">
-              {{(state.job as Job).company.description}}
+              {{ (state.job as Job).company.description }}
             </p>
 
             <hr class="my-4" />
 
             <h3 class="text-xl">Contact Email:</h3>
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{(state.job as Job).company.contactEmail}}
+              {{ (state.job as Job).company.contactEmail }}
             </p>
 
             <h3 class="text-xl">Contact Phone:</h3>
 
-            <p class="my-2 bg-green-100 p-2 font-bold">{{(state.job as Job).company.contactPhone}}</p>
+            <p class="my-2 bg-green-100 p-2 font-bold">{{ (state.job as Job).company.contactPhone }}</p>
           </div>
 
           <!-- Manage -->
           <div class="bg-white p-6 rounded-lg shadow-md mt-6">
             <h3 class="text-xl font-bold mb-6">Manage Job</h3>
-            <a href="add-job.html"
-              class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">Edit
-              Job</a>
+            <RouterLink :to="`/jobs/edit/${(state.job as Job).id}`"
+              class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+              Edit
+              Job</RouterLink>
             <button
               class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
               Delete Job
