@@ -4,6 +4,7 @@ import router from '@/router';
 import { useRoute } from "vue-router"
 import axios from "axios";
 import { useToast } from "vue-toastification"
+import type { Job } from '@/types/global'
 
 const route = useRoute()
 
@@ -23,7 +24,7 @@ const form = reactive({
 })
 
 const state = reactive({
-    job: {},
+    job: {} as Job,
     isLoading: true
 })
 
