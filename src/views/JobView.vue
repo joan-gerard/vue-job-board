@@ -6,7 +6,7 @@ import type { Job } from "@/types/global"
 import BackButton from "@/components/BackButton.vue"
 
 const route = useRoute();
-const jobId = route.params.id
+const jobId = route.params.id;
 
 const state = reactive<{
   job: Job | {};
@@ -15,7 +15,6 @@ const state = reactive<{
   job: {},
   isLoading: true
 })
-
 
 onMounted(async () => {
   try {
