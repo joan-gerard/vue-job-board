@@ -1,18 +1,18 @@
 {
   "jobs": [
     {
-      "id": "1",
-      "title": "Senior Vue Developer",
+      "title": "Senior Vue Developer 2",
       "type": "Full-Time",
-      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as Vue or Angular.",
       "location": "Boston, MA",
-      "salary": "$70K - $80K",
+      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as Vue or Angular.",
+      "salary": "Over $200K",
       "company": {
         "name": "NewTek Solutions",
         "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
         "contactEmail": "contact@teksolutions.com",
-        "contactPhone": "555-555-5555"
-      }
+        "contactPhone": "555-555-55556"
+      },
+      "id": "1"
     },
     {
       "id": "2",
@@ -194,6 +194,34 @@
         "description": "A doloremque odio do",
         "contactEmail": "viqirat@mailinator.com",
         "contactPhone": "+1 (807) 238-7039"
+      }
+    },
+    {
+      "id": "387e",
+      "title": "John Maldonado",
+      "type": "Full-Time",
+      "location": "Eius illo laboris nu",
+      "description": "Accusantium at est s",
+      "salary": "$125K - $150K",
+      "company": {
+        "name": "Robles and Cross LLC",
+        "description": "Earum praesentium ob",
+        "contactEmail": "cawyjomi@mailinator.com",
+        "contactPhone": "+1 (846) 324-6723"
+      }
+    },
+    {
+      "id": "f323",
+      "title": "Armando Becker",
+      "type": "Internship",
+      "location": "Voluptas mollitia re",
+      "description": "Qui quae a laboris e",
+      "salary": "$80K - $90K",
+      "company": {
+        "name": "Whitfield Moran Traders",
+        "description": "Autem eaque dolor de",
+        "contactEmail": "pove@mailinator.com",
+        "contactPhone": "+1 (426) 751-1899"
       }
     }
   ]
