@@ -43,7 +43,6 @@ const handleSubmit = async () => {
     } catch (error) {
         console.error("Error posting or fetching job", error)
         toast.error("Job Was Not Added")
-
     }
 }
 </script>

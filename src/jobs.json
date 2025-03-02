@@ -99,62 +99,6 @@
       }
     },
     {
-      "id": "f771",
-      "title": "Job test 2",
-      "type": "Part-Time",
-      "location": "At quisquam eu sed v",
-      "description": "Cillum non proident",
-      "salary": "$50K - $60K",
-      "company": {
-        "name": "Faulkner and Snow Trading",
-        "description": "Ullam voluptate proi",
-        "contactEmail": "qiqijafyt@mailinator.com",
-        "contactPhone": "+1 (626) 363-4435"
-      }
-    },
-    {
-      "id": "7407",
-      "title": "Job test 3",
-      "type": "Remote",
-      "location": "Dolore alias aperiam",
-      "description": "Elit velit qui nisi",
-      "salary": "$80K - $90K",
-      "company": {
-        "name": "Sharpe Weiss Associates",
-        "description": "Anim quos quidem ess",
-        "contactEmail": "sikecazose@mailinator.com",
-        "contactPhone": "+1 (889) 891-6903"
-      }
-    },
-    {
-      "id": "b737",
-      "title": "Job test 4",
-      "type": "Remote",
-      "location": "Deserunt nostrum eni",
-      "description": "Est pariatur Necess",
-      "salary": "Under $50K",
-      "company": {
-        "name": "Bennett Osborn LLC",
-        "description": "Cillum in perspiciat",
-        "contactEmail": "rujujov@mailinator.com",
-        "contactPhone": "+1 (636) 748-7244"
-      }
-    },
-    {
-      "id": "8246",
-      "title": "Job test 5",
-      "type": "Part-Time",
-      "location": "Incidunt officia pe",
-      "description": "Sed veritatis volupt",
-      "salary": "$50K - $60K",
-      "company": {
-        "name": "Parsons and Castro Plc",
-        "description": "Officia aut aperiam ",
-        "contactEmail": "qobodufeka@mailinator.com",
-        "contactPhone": "+1 (178) 973-2338"
-      }
-    },
-    {
       "id": "7cdc",
       "title": "Job test 6",
       "type": "Internship",
